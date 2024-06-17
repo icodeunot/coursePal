@@ -1,0 +1,65 @@
+<resources>
+    <string name="add_assessment_text">Add Assessment -></string>
+    <string name="add_course">Add Course</string>
+    <string name="add_course_text">Add Course -></string>
+    <string name="add_course_title">Add Course Title</string>
+    <string name="add_end">Choose End Date</string>
+    <string name="add_start">Choose Start Date</string>
+    <string name="add_term">Add Term -></string>
+    <string name="app_name">John Salazar</string>
+    <string name="assessment_end">Asmnt. End:</string>
+    <string name="assessment_id">Assessment ID:</string>
+    <string name="assessment_start">Asmnt. Start:</string>
+    <string name="assessment_title">Asmnt. Title:</string>
+    <string name="assessment_type">Asmnt. Type:</string>
+    <string name="cap">Graduation Cap</string>
+    <string name="course_assessments">Course Assessments:</string>
+    <string name="course_end">Course End:</string>
+    <string name="course_id">Course ID:</string>
+    <string name="course_start">Course Start:</string>
+    <string name="course_status">Course Status:</string>
+    <string name="course_title">Course Title:</string>
+    <string name="edit_atitle">Add Assessment Title</string>
+    <string name="edit_atitle_edit">Edit Assessment Title</string>
+    <string name="edit_course_title">Edit Course Title</string>
+    <string name="edit_term">Edit Term</string>
+    <string name="edit_title">Add Term Title</string>
+    <string name="enter">Enter</string>
+    <string name="home_screen">Course Pal</string>
+    <string name="instructor_button">Add Instructor</string>
+    <string name="instructor_button_edit">Edit Instructor</string>
+    <string name="instructor_email">Inst. Email:</string>
+    <string name="instructor_first">Inst. First Name:</string>
+    <string name="instructor_label">Add Instructor:</string>
+    <string name="instructor_label_edit">Edit Instructor:</string>
+    <string name="instructor_last">Inst. Last Name:</string>
+    <string name="instructor_phone">Inst. Phone:</string>
+    <string name="hint_email">Instructor Email</string>
+    <string name="hint_first">Instructor First</string>
+    <string name="hint_last">Instructor Last</string>
+    <string name="hint_phone">xxx xxx-xxxx</string>
+    <string name="note_button">Add Note</string>
+    <string name="note_detailed">Course Note:</string>
+    <string name="note_hint">(Optional)</string>
+    <string name="note_label">Add Note:</string>
+    <string name="note_label_edit">Edit Note:</string>
+    <string name="term_courses">Term Courses:</string>
+    <string name="term_end">Term End:</string>
+    <string name="term_id">Term ID:</string>
+    <string name="term_start">Term Start:</string>
+    <string name="term_title">Term Title:</string>
+
+    <string-array name="course_status_options">
+        <item>Choose Status</item>
+        <item>In Progress</item>
+        <item>Planned</item>
+        <item>Completed</item>
+        <item>Dropped</item>
+    </string-array>
+
+    <string-array name="assessment_types">
+        <item>Choose Type</item>
+        <item>Objective</item>
+        <item>Performance</item>
+    </string-array>
+</resources>

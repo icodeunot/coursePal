@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Edit Assessment"
+        android:id="@+id/assessmentEdit"/>
+    <item android:title="Delete Assessment"
+        android:id="@+id/assessmentDelete"/>
+    <item android:title="Set Start Alert"
+        android:id="@+id/aStartAlert"/>
+    <item android:title="Set End Alert"
+        android:id="@+id/aEndAlert"/>
+    <item android:title="Home (Term List)"
+        android:id="@+id/appHome"/>
+</menu>

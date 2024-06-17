@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Edit Term"
+        android:id="@+id/termEdit"/>
+    <item android:title="Delete Term"
+        android:id="@+id/termDelete"/>
+    <item android:title="Home (Term List)"
+        android:id="@+id/appHome"/>
+</menu>
