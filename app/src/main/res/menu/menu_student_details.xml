@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Edit Student"
+        android:id="@+id/studentEdit"/>
+    <item android:title="Delete Student"
+        android:id="@+id/studentDelete"/>
+    <item android:title="Home (Student List)"
+        android:id="@+id/appHome"/>
+</menu>

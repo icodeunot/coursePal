@@ -31,6 +31,11 @@
             android:label="Course Details"
             android:parentActivityName=".UI.CourseList" />
         <activity
+            android:name=".UI.StudentDetails"
+            android:exported="false"
+            android:label="Student Details"
+            android:parentActivityName=".UI.StudentList" />
+        <activity
             android:name=".UI.TermDetails"
             android:exported="false"
             android:label="Term Details"
@@ -49,6 +54,11 @@
             android:name=".UI.TermList"
             android:exported="false"
             android:label="Term List"
+            android:parentActivityName=".UI.StudentList" />
+        <activity
+            android:name=".UI.StudentList"
+            android:exported="false"
+            android:label="Student List"
             android:parentActivityName=".UI.MainActivity" />
         <activity
             android:name=".UI.AddAssessment"
@@ -66,6 +76,11 @@
             android:label="Add Instructor"
             android:parentActivityName=".UI.CourseList"/>
         <activity
+            android:name=".UI.AddStudent"
+            android:exported="false"
+            android:label="Add Student"
+            android:parentActivityName=".UI.StudentList"/>
+        <activity
             android:name=".UI.AddTerm"
             android:exported="false"
             android:label="Add Term"
@@ -80,6 +95,11 @@
             android:exported="false"
             android:label="Edit Course"
             android:parentActivityName=".UI.CourseList"/>
+        <activity
+            android:name=".UI.EditStudent"
+            android:exported="false"
+            android:label="Edit Student"
+            android:parentActivityName=".UI.StudentList"/>
         <activity
             android:name=".UI.EditTerm"
             android:exported="false"

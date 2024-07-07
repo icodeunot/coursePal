@@ -28,6 +28,7 @@ public class EditTerm extends AppCompatActivity {
 
     // Class Variables
     private int termID;
+    private int studentID;
     private String termTitle;
     private String termStart;
     private String termEnd;
@@ -53,6 +54,9 @@ public class EditTerm extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        // Initialize Repository
+        repository = new Repository(getApplication());
+
         // Initialize Views
         editTitle = findViewById(R.id.editTermTitle);
         editStart = findViewById(R.id.editTermStart);
@@ -60,6 +64,7 @@ public class EditTerm extends AppCompatActivity {
 
         // Get and fill values from TermDetails
         termID = getIntent().getIntExtra("termID", -1);
+        studentID = getIntent().getIntExtra("studentID", -1);
         termTitle = getIntent().getStringExtra("termTitle");
         termStart = getIntent().getStringExtra("termStart");
         termEnd = getIntent().getStringExtra("termEnd");
@@ -76,9 +81,6 @@ public class EditTerm extends AppCompatActivity {
         if (termEnd.isEmpty()) {
             editEnd.setHint("Select End Date");
         }
-
-        // Initialize Repository
-        repository = new Repository(getApplication());
 
         // Setup date formatting
         String formatDate = "MM/dd/yy";
@@ -204,12 +206,13 @@ public class EditTerm extends AppCompatActivity {
             }
             // Clears all validation, update the table.
             else {
-                term = new Term(termID, termTitle, termStart, termEnd);
+                term = new Term(termID, studentID, termTitle, termStart, termEnd);
                 repository.update(term);
             }
             // Send back to TermDetails to see results
             Intent resultIntent = new Intent(EditTerm.this, TermDetails.class);
             resultIntent.putExtra("termID", termID);
+            resultIntent.putExtra("studentID", studentID);
             resultIntent.putExtra("termTitle", termTitle);
             resultIntent.putExtra("termStart", termStart);
             resultIntent.putExtra("termEnd", termEnd);
@@ -238,6 +241,7 @@ public class EditTerm extends AppCompatActivity {
         termStart = editStart.getText().toString();
         termEnd = editStart.getText().toString();
         outState.putInt("termID", termID);
+        outState.putInt("studentID", studentID);
         outState.putString("termTitle", termTitle);
         outState.putString("termStart", termStart);
         outState.putString("termEnd", termEnd);
@@ -247,6 +251,7 @@ public class EditTerm extends AppCompatActivity {
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         termID = savedInstanceState.getInt("termID");
+        studentID = savedInstanceState.getInt("studentID");
         termTitle = savedInstanceState.getString("termTitle");
         termStart = savedInstanceState.getString("termStart");
         termEnd = savedInstanceState.getString("termEnd");

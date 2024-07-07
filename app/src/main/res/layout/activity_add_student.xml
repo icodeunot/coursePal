@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addStudent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.AddStudent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+        android:id="@+id/addStudentFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
+        app:tint="@color/white"
+        app:backgroundTint="@color/WGBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/add" />
+
+    <TextView
+        android:id="@+id/addStudentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_term"
+        android:background="@drawable/corner_shaper"
+        android:elevation="10dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@id/addStudentFAB"
+        app:layout_constraintBottom_toBottomOf="@id/addStudentFAB"
+        app:layout_constraintTop_toTopOf="@id/addStudentFAB"
+        style="@style/changeThemeText" />
+
+    <ScrollView
+        android:id="@+id/addStudentScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/changeThemeColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:id="@+id/addStudentLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/addStudentFirstLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/student_first"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="TextSizeCheck" />
+
+                <EditText
+                    android:id="@+id/addStudentFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@android:color/transparent"
+                    android:cursorVisible="true"
+                    android:hint="@string/student_hint_first"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLength="20"
+                    android:minWidth="48dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@null"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/addInstructorFirstLabel"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/addStudentLastLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/student_last"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="TextSizeCheck" />
+
+                <EditText
+                    android:id="@+id/addStudentLast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@android:color/transparent"
+                    android:cursorVisible="true"
+                    android:hint="@string/student_hint_last"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLength="20"
+                    android:minWidth="48dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@null"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/addStudentLastLabel"
+                    tools:ignore="Autofill,TextContrastCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/addStudentPhoneLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/student_phone"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="TextSizeCheck" />
+
+                <EditText
+                    android:id="@+id/addStudentPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@android:color/transparent"
+                    android:cursorVisible="true"
+                    android:hint="@string/hint_phone"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone|number"
+                    android:minWidth="48dp"
+                    android:textCursorDrawable="@null"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/addStudentPhoneLabel"
+                    tools:ignore="Autofill,TextContrastCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/addStudentEmailLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/student_email"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/addStudentEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@android:color/transparent"
+                    android:cursorVisible="true"
+                    android:hint="@string/student_hint_email"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:minWidth="48dp"
+                    android:textCursorDrawable="@null"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/addStudentEmailLabel"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,TextContrastCheck" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

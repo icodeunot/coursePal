@@ -10,6 +10,6 @@
         android:id="@+id/aStartAlert"/>
     <item android:title="Set End Alert"
         android:id="@+id/aEndAlert"/>
-    <item android:title="Home (Term List)"
+    <item android:title="Home (Student List)"
         android:id="@+id/appHome"/>
 </menu>

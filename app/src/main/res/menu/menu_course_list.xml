@@ -4,6 +4,8 @@
         android:id="@+id/assessments"/>
     <item android:title="All Terms"
         android:id="@+id/terms"/>
+    <item android:title="All Students"
+        android:id="@+id/students"/>
     <item android:title="Close App"
         android:id="@+id/closeApp"/>
 </menu>

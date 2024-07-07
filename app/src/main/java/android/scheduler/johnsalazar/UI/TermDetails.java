@@ -30,6 +30,7 @@ public class TermDetails extends AppCompatActivity {
     private CourseAdapter courseAdapter;
     private int numCourses;
     private int termID;
+    private int studentID;
     private String termTitle;
     private String termStart;
     private String termEnd;
@@ -67,6 +68,7 @@ public class TermDetails extends AppCompatActivity {
         // Get and fill values from TermList
         termID = getIntent().getIntExtra("termID", -1);
         currentTerm = repository.getThisTerm(termID);
+        studentID = currentTerm.getStudentID();
         termTitle = getIntent().getStringExtra("termTitle");
         termStart = getIntent().getStringExtra("termStart");
         termEnd = getIntent().getStringExtra("termEnd");
@@ -114,14 +116,16 @@ public class TermDetails extends AppCompatActivity {
             return true;
         }
         if (item.getItemId() == R.id.appHome) {
-            Intent intent = new Intent(TermDetails.this, TermList.class);
+            Intent intent = new Intent(TermDetails.this, StudentList.class);
             startActivity(intent);
             return true;
         }
         // Send term to EditTerm
         if (item.getItemId() == R.id.termEdit) {
+            currentTerm = repository.getThisTerm(termID);
             Intent intent = new Intent(TermDetails.this, EditTerm.class);
             intent.putExtra("termID", termID);
+            intent.putExtra("studentID", currentTerm.getStudentID());
             intent.putExtra("termTitle", termTitle);
             intent.putExtra("termStart", termStart);
             intent.putExtra("termEnd", termEnd);

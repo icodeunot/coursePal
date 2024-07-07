@@ -90,8 +90,12 @@ public class AssessmentList extends AppCompatActivity {
             startActivity(allCourses);
         }
         else if(item.getItemId() == R.id.terms) {
-            Intent allAssessments = new Intent(AssessmentList.this, TermList.class);
-            startActivity(allAssessments);
+            Intent allTerms = new Intent(AssessmentList.this, TermList.class);
+            startActivity(allTerms);
+        }
+        else if(item.getItemId() == R.id.students) {
+            Intent allStudents = new Intent(AssessmentList.this, StudentList.class);
+            startActivity(allStudents);
         }
         // Exit App
         if(item.getItemId() == R.id.closeApp) {

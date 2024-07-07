@@ -270,7 +270,7 @@ public class CourseDetails extends AppCompatActivity {
             return true;
         }
         if (item.getItemId() == R.id.appHome) {
-            Intent intent = new Intent(CourseDetails.this, TermList.class);
+            Intent intent = new Intent(CourseDetails.this, StudentList.class);
             startActivity(intent);
             return true;
         }

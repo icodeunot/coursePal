@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AddInstructor extends AppCompatActivity {
 
-    int instructorID; //TODO: FIGURE OUT HOW TO GET INSTRUCTOR ID TO DEFAULT TO -1
+    int instructorID;
 
     String instructorFirst;
     String instructorLast;

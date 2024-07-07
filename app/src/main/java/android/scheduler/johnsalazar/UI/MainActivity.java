@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //                for (Instructor i : repository.getmAllInstructors()) {
 //                    repository.delete(i);
 //                }
-                Intent intent = new Intent(MainActivity.this, TermList.class);
+                Intent intent = new Intent(MainActivity.this, StudentList.class);
                 startActivity(intent);
             }
         });

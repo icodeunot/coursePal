@@ -42,6 +42,7 @@ public class AddTerm extends AppCompatActivity {
 
     // Class Variables
     int termID;
+    int studentID;
     String termTitle;
     String termStart;
     String termEnd;
@@ -67,15 +68,17 @@ public class AddTerm extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        // Initialize Repository
+        repository = new Repository(getApplication());
+
         // Assign termID to -1 for creation and initialize views
         termID = -1;
+        studentID = getIntent().getIntExtra("studentID", -1);
         editTitle = findViewById(R.id.addTermTitle);
         editStart = findViewById(R.id.addTermStart);
         editEnd = findViewById(R.id.addTermEnd);
         floatButton = findViewById(R.id.addTermFAB);
 
-        // Initialize Repository
-        repository = new Repository(getApplication());
 
         // Setup date format
         String formatDate = "MM/dd/yy";
@@ -158,12 +161,12 @@ public class AddTerm extends AppCompatActivity {
                     else {
                         termID = repository.getmAllTerms().get(repository.getmAllTerms().size() - 1).getTermID() + 1;
                     }
-                    term = new Term(termID, termTitle, termStart, termEnd);
+                    term = new Term(termID, studentID, termTitle, termStart, termEnd);
                     repository.insert(term);
                     Toast.makeText(AddTerm.this, "Term has been saved. View in Term List if you cancel.", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    term = new Term(termID, termTitle, termStart, termEnd);
+                    term = new Term(termID, studentID, termTitle, termStart, termEnd);
                     repository.update(term);
                     Toast.makeText(AddTerm.this, "Term has been updated. View in Term List if you cancel.", Toast.LENGTH_LONG).show();
 
@@ -237,12 +240,12 @@ public class AddTerm extends AppCompatActivity {
                 else {
                     termID = repository.getmAllTerms().get(repository.getmAllTerms().size() - 1).getTermID() + 1;
                 }
-                term = new Term(termID, termTitle, termStart, termEnd);
+                term = new Term(termID, studentID, termTitle, termStart, termEnd);
                 repository.insert(term);
                 this.finish();
             }
             else {
-                term = new Term(termID, termTitle, termStart, termEnd);
+                term = new Term(termID, studentID, termTitle, termStart, termEnd);
                 repository.update(term);
                 this.finish();
             }

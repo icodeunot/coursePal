@@ -8,35 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".UI.EditTerm">
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        tools:ignore="ContentDescription,SpeakableTextPresentCheck"-->
-<!--        android:id="@+id/editTermFAB"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="15dp"-->
-<!--        android:layout_marginEnd="15dp"-->
-<!--        android:clickable="true"-->
-<!--        app:tint="@color/white"-->
-<!--        app:backgroundTint="@color/WGBlue"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:srcCompat="@drawable/add" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/editCourseText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/add_course_text"-->
-<!--        android:background="@drawable/corner_shaper"-->
-<!--        android:elevation="10dp"-->
-<!--        android:textSize="20sp"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginEnd="5dp"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/editTermFAB"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/editTermFAB"-->
-<!--        app:layout_constraintTop_toTopOf="@id/editTermFAB"-->
-<!--        style="@style/changeThemeText" />-->
-
     <ScrollView
         android:id="@+id/editTermDetailsScroll"
         android:layout_width="match_parent"

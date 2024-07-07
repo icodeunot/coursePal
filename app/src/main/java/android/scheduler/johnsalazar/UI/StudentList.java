@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.scheduler.johnsalazar.DB.Repository;
+import android.scheduler.johnsalazar.Entity.Student;
 import android.scheduler.johnsalazar.Entity.Term;
+import android.scheduler.johnsalazar.Helper.StudentAdapter;
 import android.scheduler.johnsalazar.Helper.TermAdapter;
 import android.scheduler.johnsalazar.R;
 import android.view.Menu;
@@ -16,19 +18,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 
-public class TermList extends AppCompatActivity {
+public class StudentList extends AppCompatActivity {
 
     // Class variables/instances
     private Repository repository;
-    private RecyclerView termRecycler;
-    private FloatingActionButton termListFAB;
-    private TermAdapter termAdapter;
+    private RecyclerView studentRecycler;
+    private FloatingActionButton studentListFAB;
+    private StudentAdapter studentAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_term_list);
-        setTitle("Terms");
+        setContentView(R.layout.activity_student_list);
+        setTitle("Students");
 
         // HIDE SYS NAVIGATION
         View decorView = getWindow().getDecorView();
@@ -40,21 +42,21 @@ public class TermList extends AppCompatActivity {
         repository = new Repository(getApplication());
 
         // Initialize UI elements
-        termListFAB = findViewById(R.id.termListFAB);
-        termRecycler = findViewById(R.id.termListRecycler);
+        studentListFAB = findViewById(R.id.studentListFAB);
+        studentRecycler = findViewById(R.id.studentListRecycler);
 
-        // Setup Term Recycler and fill with all terms
-        List<Term> allTerms = repository.getmAllTerms();
-        termAdapter = new TermAdapter(this);
-        termRecycler.setAdapter(termAdapter);
-        termRecycler.setLayoutManager(new LinearLayoutManager(this));
-        termAdapter.setTerms(allTerms);
+        // Setup Student Recycler and fill with all students
+        List<Student> allStudents = repository.getmAllStudents();
+        studentAdapter = new StudentAdapter(this);
+        studentRecycler.setAdapter(studentAdapter);
+        studentRecycler.setLayoutManager(new LinearLayoutManager(this));
+        studentAdapter.setStudents(allStudents);
 
-        // Setup termListFAB
-        termListFAB.setOnClickListener(new View.OnClickListener() {
+        // Setup studentListFAB
+        studentListFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TermList.this, AddTerm.class);
+                Intent intent = new Intent(StudentList.this, AddStudent.class);
                 startActivity(intent);
             }
         });
@@ -64,34 +66,34 @@ public class TermList extends AppCompatActivity {
         super.onResume();
 
         // Reset recycler
-        List<Term> allTerms = repository.getmAllTerms();
-        termAdapter = new TermAdapter(this);
-        termRecycler.setAdapter(termAdapter);
-        termRecycler.setLayoutManager(new LinearLayoutManager(this));
-        termAdapter.setTerms(allTerms);
+        List<Student> allStudents = repository.getmAllStudents();
+        studentAdapter = new StudentAdapter(this);
+        studentRecycler.setAdapter(studentAdapter);
+        studentRecycler.setLayoutManager(new LinearLayoutManager(this));
+        studentAdapter.setStudents(allStudents);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_term_list, menu);
+        getMenuInflater().inflate(R.menu.menu_student_list, menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        // Go to terms
+        if(item.getItemId() == R.id.terms) {
+            Intent allTerms = new Intent(StudentList.this, TermList.class);
+            startActivity(allTerms);
+        }
         // Go to CourseList
         if(item.getItemId() == R.id.courses) {
-            Intent allCourses = new Intent(TermList.this, CourseList.class);
+            Intent allCourses = new Intent(StudentList.this, CourseList.class);
             startActivity(allCourses);
         }
         // Go to AssessmentList
         if(item.getItemId() == R.id.assessments) {
-            Intent allAssessments = new Intent(TermList.this, AssessmentList.class);
+            Intent allAssessments = new Intent(StudentList.this, AssessmentList.class);
             startActivity(allAssessments);
-        }
-        // Go to StudentList
-        if(item.getItemId() == R.id.students) {
-            Intent allStudents = new Intent(TermList.this, StudentList.class);
-            startActivity(allStudents);
         }
         // Exit App
         if(item.getItemId() == R.id.closeApp) {

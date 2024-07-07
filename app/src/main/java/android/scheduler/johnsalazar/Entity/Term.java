@@ -1,5 +1,6 @@
 package android.scheduler.johnsalazar.Entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -7,22 +8,28 @@ import androidx.room.PrimaryKey;
 public class Term {
     @PrimaryKey(autoGenerate = true)
     private int termID;
+    private final int studentID;
     private String termTitle;
     private String termStart;
     private String termEnd;
 
-    public Term(int termID, String termTitle, String termStart, String termEnd) {
+    public Term(int termID, int studentID, String termTitle, String termStart, String termEnd) {
         this.termID = termID;
+        this.studentID = studentID;
         this.termTitle = termTitle;
         this.termStart = termStart;
         this.termEnd = termEnd;
     }
 
+    @NonNull
     public String toString() {
         return termTitle;
     }
     public int getTermID() {
         return termID;
+    }
+    public int getStudentID() {
+        return studentID;
     }
     public String getTermTitle() {
         return termTitle;

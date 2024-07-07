@@ -5,6 +5,7 @@
     <string name="add_course_title">Add Course Title</string>
     <string name="add_end">Choose End Date</string>
     <string name="add_start">Choose Start Date</string>
+    <string name="add_student">Add Student -></string>
     <string name="add_term">Add Term -></string>
     <string name="app_name">John Salazar</string>
     <string name="assessment_end">Asmnt. End:</string>
@@ -43,6 +44,19 @@
     <string name="note_hint">(Optional)</string>
     <string name="note_label">Add Note:</string>
     <string name="note_label_edit">Edit Note:</string>
+    <string name="student_button">Add Student</string>
+    <string name="student_button_edit">Edit Student</string>
+    <string name="student_email">Student Email:</string>
+    <string name="student_first">Student First Name:</string>
+    <string name="student_hint_email">Student Email</string>
+    <string name="student_hint_first">Student First</string>
+    <string name="student_hint_last">Student Last</string>
+    <string name="student_id">Student ID:</string>
+    <string name="student_label">Add Student:</string>
+    <string name="student_label_edit">Edit Student:</string>
+    <string name="student_last">Student Last Name:</string>
+    <string name="student_phone">Student Phone:</string>
+    <string name="student_terms">Student\'s Terms:</string>
     <string name="term_courses">Term Courses:</string>
     <string name="term_end">Term End:</string>
     <string name="term_id">Term ID:</string>

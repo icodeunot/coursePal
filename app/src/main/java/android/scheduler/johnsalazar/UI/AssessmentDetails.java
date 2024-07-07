@@ -99,12 +99,10 @@ public class AssessmentDetails extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
-//            Intent intent = new Intent(CourseDetails.this, TermList.class);
-//            startActivity(intent);
             return true;
         }
         if (item.getItemId() == R.id.appHome) {
-            Intent intent = new Intent(AssessmentDetails.this, TermList.class);
+            Intent intent = new Intent(AssessmentDetails.this, StudentList.class);
             startActivity(intent);
             return true;
         }

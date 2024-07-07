@@ -86,14 +86,18 @@ public class CourseList extends AppCompatActivity {
 
         // Go to terms
         if(item.getItemId() == R.id.terms) {
-            Intent allCourses = new Intent(CourseList.this, TermList.class);
-            startActivity(allCourses);
+            Intent allTerms = new Intent(CourseList.this, TermList.class);
+            startActivity(allTerms);
         }
-
         // Go to assessments
         if(item.getItemId() == R.id.assessments) {
             Intent allAssessments = new Intent(CourseList.this, AssessmentList.class);
             startActivity(allAssessments);
+        }
+        // Go to students
+        if(item.getItemId() == R.id.students) {
+            Intent allStudents = new Intent(CourseList.this, StudentList.class);
+            startActivity(allStudents);
         }
         // Exit App
         if(item.getItemId() == R.id.closeApp) {
