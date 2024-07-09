@@ -14,22 +14,56 @@
         android:layout_height="wrap_content"
         android:text="@string/home_screen"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/loginUN"
+        app:layout_constraintEnd_toStartOf="@id/button"
+        app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/loginUN"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Username"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textCursorDrawable="@null"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/loginPW"
+        app:layout_constraintEnd_toStartOf="@id/button"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/mainLabel" />
+
+    <EditText
+        android:id="@+id/loginPW"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textCursorDrawable="@null"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/loginUN" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/enter"
+        android:text="@string/submit"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:backgroundTint="@color/WGBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintStart_toEndOf="@id/loginUN"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -37,8 +71,8 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/button"
-        app:layout_constraintStart_toEndOf="@id/mainLabel"
+        app:layout_constraintEnd_toStartOf="@id/loginUN"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_school_24"
         tools:layout_editor_absoluteY="191dp"

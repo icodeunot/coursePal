@@ -25,7 +25,7 @@
     <string name="edit_course_title">Edit Course Title</string>
     <string name="edit_term">Edit Term</string>
     <string name="edit_title">Add Term Title</string>
-    <string name="enter">Enter</string>
+    <string name="submit">Submit</string>
     <string name="home_screen">Course Pal</string>
     <string name="instructor_button">Add Instructor</string>
     <string name="instructor_button_edit">Edit Instructor</string>

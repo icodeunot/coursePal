@@ -11,11 +11,17 @@ import android.scheduler.johnsalazar.Entity.Instructor;
 import android.scheduler.johnsalazar.R;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String loginUN;
+    private String loginPW;
+    private EditText etUN;
+    private EditText etPW;
     public static int numAlert;
     private Repository repository;
 
@@ -24,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        etUN = findViewById(R.id.loginUN);
+        etPW = findViewById(R.id.loginPW);
         Button button=findViewById(R.id.button);
 
         // HIDE SYS NAVIGATION
@@ -43,8 +51,16 @@ public class MainActivity extends AppCompatActivity {
 //                for (Instructor i : repository.getmAllInstructors()) {
 //                    repository.delete(i);
 //                }
-                Intent intent = new Intent(MainActivity.this, StudentList.class);
-                startActivity(intent);
+                loginUN = etUN.getText().toString();
+                loginPW = etPW.getText().toString();
+                if (loginUN.equals("admin") && loginPW.equals("Admin1")) {
+                    Intent intent = new Intent(MainActivity.this, StudentList.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Incorrect login information. Please try again",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

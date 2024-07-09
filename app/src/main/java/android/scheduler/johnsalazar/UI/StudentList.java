@@ -95,6 +95,11 @@ public class StudentList extends AppCompatActivity {
             Intent allAssessments = new Intent(StudentList.this, AssessmentList.class);
             startActivity(allAssessments);
         }
+        // Go to Search
+        if(item.getItemId() == R.id.search) {
+            Intent search = new Intent(StudentList.this, StudentSearch.class);
+            startActivity(search);
+        }
         // Exit App
         if(item.getItemId() == R.id.closeApp) {
             finishAffinity();

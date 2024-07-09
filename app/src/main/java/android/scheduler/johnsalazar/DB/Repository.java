@@ -4,13 +4,13 @@ import android.app.Application;
 import android.scheduler.johnsalazar.DAO.AssessmentDAO;
 import android.scheduler.johnsalazar.DAO.CourseDAO;
 import android.scheduler.johnsalazar.DAO.InstructorDAO;
-import android.scheduler.johnsalazar.DAO.NoteDAO;
+//import android.scheduler.johnsalazar.DAO.NoteDAO;
 import android.scheduler.johnsalazar.DAO.StudentDAO;
 import android.scheduler.johnsalazar.DAO.TermDAO;
 import android.scheduler.johnsalazar.Entity.Assessment;
 import android.scheduler.johnsalazar.Entity.Course;
 import android.scheduler.johnsalazar.Entity.Instructor;
-import android.scheduler.johnsalazar.Entity.Note;
+//import android.scheduler.johnsalazar.Entity.Note;
 import android.scheduler.johnsalazar.Entity.Student;
 import android.scheduler.johnsalazar.Entity.Term;
 import java.util.List;
@@ -22,14 +22,14 @@ public class Repository {
     private AssessmentDAO mAssessmentDAO;
     private CourseDAO mCourseDAO;
     private InstructorDAO mInstructorDAO;
-    private NoteDAO mNoteDAO;
+//    private NoteDAO mNoteDAO;
     private StudentDAO mStudentDAO;
     private TermDAO mTermDAO;
 
     private List<Assessment> mAllAssessments;
     private List<Course> mAllCourses;
     private List<Instructor> mAllInstructors;
-    private List<Note> mAllNotes;
+//    private List<Note> mAllNotes;
     private List<Student> mAllStudents;
     private List<Term> mAllTerms;
 
@@ -47,7 +47,7 @@ public class Repository {
         mAssessmentDAO = db.assessmentDAO();
         mCourseDAO = db.courseDAO();
         mInstructorDAO = db.instructorDAO();
-        mNoteDAO = db.noteDAO();
+//        mNoteDAO = db.noteDAO();
         mStudentDAO = db.studentDAO();
         mTermDAO = db.termDAO();
     }
@@ -250,48 +250,48 @@ public class Repository {
         return mInstructor;
     }
 
-    public List<Note> getmAllNotes() {
-        databaseExecutor.execute(() -> {
-            mAllNotes = mNoteDAO.getAllNotes();
-        });
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        return mAllNotes;
-    }
-    public void insert(Note note) {
-        databaseExecutor.execute( ()-> {
-            mNoteDAO.insert(note);
-        });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-    public void update(Note note) {
-        databaseExecutor.execute( ()-> {
-            mNoteDAO.update(note);
-        });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-    public void delete(Note note) {
-        databaseExecutor.execute( ()-> {
-            mNoteDAO.delete(note);
-        });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+//    public List<Note> getmAllNotes() {
+//        databaseExecutor.execute(() -> {
+//            mAllNotes = mNoteDAO.getAllNotes();
+//        });
+//
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return mAllNotes;
+//    }
+//    public void insert(Note note) {
+//        databaseExecutor.execute( ()-> {
+//            mNoteDAO.insert(note);
+//        });
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    public void update(Note note) {
+//        databaseExecutor.execute( ()-> {
+//            mNoteDAO.update(note);
+//        });
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    public void delete(Note note) {
+//        databaseExecutor.execute( ()-> {
+//            mNoteDAO.delete(note);
+//        });
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public List<Student> getmAllStudents() {
         databaseExecutor.execute(() -> {
