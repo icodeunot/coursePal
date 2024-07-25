@@ -1,0 +1,46 @@
+@startuml
+interface android.scheduler.johnsalazar.DAO.AssessmentDAO {
+~ void insert(Assessment)
+~ void update(Assessment)
+~ void delete(Assessment)
+~ List<Assessment> getAllAssessments()
+~ void deleteCourseAssessments(int)
+~ Assessment getThisAssessment(int)
+~ List<Assessment> getCourseAssessments(int)
+}
+
+interface android.scheduler.johnsalazar.DAO.CourseDAO {
+~ void insert(Course)
+~ void update(Course)
+~ void delete(Course)
+~ List<Course> getAllCourses()
+~ void deleteTermCourses(int)
+~ Course getThisCourse(int)
+}
+
+interface android.scheduler.johnsalazar.DAO.InstructorDAO {
+~ void insert(Instructor)
+~ void update(Instructor)
+~ void delete(Instructor)
+~ List<Instructor> getAllInstructors()
+~ Instructor getThisInstructor(int)
+}
+
+interface android.scheduler.johnsalazar.DAO.StudentDAO {
+~ void insert(Student)
+~ void update(Student)
+~ void delete(Student)
+~ List<Student> getAllStudents()
+~ Student getThisStudent(int)
+}
+
+interface android.scheduler.johnsalazar.DAO.TermDAO {
+~ void insert(Term)
+~ void update(Term)
+~ void delete(Term)
+~ List<Term> getAllTerms()
+~ void deleteStudentTerms(int)
+~ Term getThisTerm(int)
+}
+
+@enduml

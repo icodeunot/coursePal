@@ -1,0 +1,16 @@
+@startuml
+class android.scheduler.johnsalazar.UI.MainActivity {
+- String loginUN
+- String loginPW
+- EditText etUN
+- EditText etPW
++ {static} int numAlert
+- Repository repository
+# void onCreate(Bundle)
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.MainActivity
+@enduml

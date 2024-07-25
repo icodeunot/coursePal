@@ -1,1 +1,1 @@
-# coursePal
+# studyBuddy

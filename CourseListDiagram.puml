@@ -1,0 +1,17 @@
+@startuml
+class android.scheduler.johnsalazar.UI.CourseList {
+- Repository repository
+- RecyclerView courseRecycler
+- FloatingActionButton courseListFAB
+- CourseAdapter courseAdapter
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
+# void onResume()
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.CourseList
+@enduml

@@ -1,0 +1,105 @@
+@startuml
+class android.scheduler.johnsalazar.Helper.SearchAdapter {
+- List<Student> mStudents
+- Context context
+- LayoutInflater mInflater
++ SearchViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(SearchViewHolder,int)
++ int getItemCount()
++ void setStudents(List<Student>)
+}
+
+
+class android.scheduler.johnsalazar.Helper.SearchAdapter$SearchViewHolder {
+- TextView studentFirstView
+- TextView studentPhoneView
+}
+
+class android.scheduler.johnsalazar.Helper.AssessmentAdapter {
+- List<Assessment> mAssessments
+- Context context
+- LayoutInflater mInflater
++ AssessmentAdapter.AssessmentViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(AssessmentAdapter.AssessmentViewHolder,int)
++ int getItemCount()
++ void setAssessments(List<Assessment>)
+}
+
+
+class android.scheduler.johnsalazar.Helper.AssessmentAdapter$AssessmentViewHolder {
+- TextView assessmentItemView
+}
+
+class android.scheduler.johnsalazar.Helper.MyReceiver {
+~ String channel_id
+~ {static} int notificationID
++ void onReceive(Context,Intent)
+- void createNotificationChannel(Context,String)
+}
+
+
+class android.scheduler.johnsalazar.Helper.CourseAdapter {
+- List<Course> mCourses
+- AddTerm termContext
+- Context context
+- LayoutInflater mInflater
++ CourseAdapter.CourseViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(CourseAdapter.CourseViewHolder,int)
++ int getItemCount()
++ void setCourses(List<Course>)
+}
+
+
+class android.scheduler.johnsalazar.Helper.CourseAdapter$CourseViewHolder {
+- TextView courseItemView
+}
+
+class android.scheduler.johnsalazar.Helper.TermAdapter {
+- List<Term> mTerms
+- Context context
+- LayoutInflater mInflater
++ TermAdapter.TermViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(TermAdapter.TermViewHolder,int)
++ int getItemCount()
++ void setTerms(List<Term>)
+}
+
+
+class android.scheduler.johnsalazar.Helper.TermAdapter$TermViewHolder {
+- TextView termItemView
+}
+
+class android.scheduler.johnsalazar.Helper.StudentAdapter {
+- List<Student> mStudents
+- Context context
+- LayoutInflater mInflater
++ StudentAdapter.StudentViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(StudentAdapter.StudentViewHolder,int)
++ int getItemCount()
++ void setStudents(List<Student>)
+}
+
+
+class android.scheduler.johnsalazar.Helper.StudentAdapter$StudentViewHolder {
+- TextView studentItemView
+}
+
+
+
+android.scheduler.johnsalazar.Helper.Adapter <|-- android.scheduler.johnsalazar.Helper.SearchAdapter
+android.scheduler.johnsalazar.Helper.SearchAdapter +.. android.scheduler.johnsalazar.Helper.SearchAdapter$SearchViewHolder
+android.scheduler.johnsalazar.Helper.ViewHolder <|-- android.scheduler.johnsalazar.Helper.SearchAdapter$SearchViewHolder
+android.scheduler.johnsalazar.Helper.Adapter <|-- android.scheduler.johnsalazar.Helper.AssessmentAdapter
+android.scheduler.johnsalazar.Helper.AssessmentAdapter +.. android.scheduler.johnsalazar.Helper.AssessmentAdapter$AssessmentViewHolder
+android.scheduler.johnsalazar.Helper.ViewHolder <|-- android.scheduler.johnsalazar.Helper.AssessmentAdapter$AssessmentViewHolder
+android.content.BroadcastReceiver <|-- android.scheduler.johnsalazar.Helper.MyReceiver
+android.scheduler.johnsalazar.Helper.Adapter <|-- android.scheduler.johnsalazar.Helper.CourseAdapter
+android.scheduler.johnsalazar.Helper.CourseAdapter +.. android.scheduler.johnsalazar.Helper.CourseAdapter$CourseViewHolder
+android.scheduler.johnsalazar.Helper.ViewHolder <|-- android.scheduler.johnsalazar.Helper.CourseAdapter$CourseViewHolder
+android.scheduler.johnsalazar.Helper.Adapter <|-- android.scheduler.johnsalazar.Helper.TermAdapter
+android.scheduler.johnsalazar.Helper.TermAdapter +.. android.scheduler.johnsalazar.Helper.TermAdapter$TermViewHolder
+android.scheduler.johnsalazar.Helper.ViewHolder <|-- android.scheduler.johnsalazar.Helper.TermAdapter$TermViewHolder
+android.scheduler.johnsalazar.Helper.Adapter <|-- android.scheduler.johnsalazar.Helper.StudentAdapter
+android.scheduler.johnsalazar.Helper.StudentAdapter +.. android.scheduler.johnsalazar.Helper.StudentAdapter$StudentViewHolder
+android.scheduler.johnsalazar.Helper.ViewHolder <|-- android.scheduler.johnsalazar.Helper.StudentAdapter$StudentViewHolder
+@enduml

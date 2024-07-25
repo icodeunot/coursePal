@@ -1,0 +1,113 @@
+@startuml
+class android.scheduler.johnsalazar.Entity.Student {
+- int studentID
+- String studentFirst
+- String studentLast
+- String studentPhone
+- String studentEmail
++ int getStudentID()
++ void setStudentID(int)
++ String getStudentFirst()
++ void setStudentFirst(String)
++ String getStudentLast()
++ void setStudentLast(String)
++ String getStudentPhone()
++ void setStudentPhone(String)
++ String getStudentEmail()
++ void setStudentEmail(String)
+}
+
+
+class android.scheduler.johnsalazar.Entity.Assessment {
+- int assessmentID
+- String assessmentTitle
+- String assessmentType
+- String startDate
+- String endDate
+- int courseID
++ int getAssessmentID()
++ String getAssessmentTitle()
++ String getAssessmentType()
++ String getStartDate()
++ String getEndDate()
++ int getCourseID()
++ void setAssessmentID(int)
++ void setAssessmentTitle(String)
++ void setAssessmentType(String)
++ void setStartDate(String)
++ void setEndDate(String)
++ void setCourseID(int)
+}
+
+
+class android.scheduler.johnsalazar.Entity.Instructor {
+- int instructorID
+- String instructorFirstName
+- String instructorLastName
+- String instructorPhone
+- String instructorEmail
++ int getInstructorID()
++ void setInstructorID(int)
++ String getInstructorFirstName()
++ void setInstructorFirstName(String)
++ String getInstructorLastName()
++ void setInstructorLastName(String)
++ String getInstructorPhone()
++ void setInstructorPhone(String)
++ String getInstructorEmail()
++ void setInstructorEmail(String)
+}
+
+
+class android.scheduler.johnsalazar.Entity.Course {
+- int courseID
+- String courseTitle
+- String courseStart
+- String courseEnd
+- String courseStatus
+- String courseNote
+- int termID
+- int instructorID
++ int getCourseID()
++ String getCourseTitle()
++ String getCourseStart()
++ String getCourseEnd()
++ String getCourseStatus()
++ String getCourseNote()
++ int getTermID()
++ int getInstructorID()
++ void setCourseID(int)
++ void setCourseTitle(String)
++ void setCourseStart(String)
++ void setCourseEnd(String)
++ void setCourseStatus(String)
++ void setCourseNote(String)
++ void setTermID(int)
++ void setInstructorID(int)
+}
+
+
+class android.scheduler.johnsalazar.Entity.Term {
+- int termID
+- int studentID
+- String termTitle
+- String termStart
+- String termEnd
++ String toString()
++ int getTermID()
++ int getStudentID()
++ String getTermTitle()
++ String getTermStart()
++ String getTermEnd()
++ void setTermID(int)
++ void setTermTitle(String)
++ void setTermStart(String)
++ void setTermEnd(String)
+}
+
+android.scheduler.johnsalazar.Entity.Student "1" -- "0..*" android.scheduler.johnsalazar.Entity.Term : studentID
+android.scheduler.johnsalazar.Entity.Course "1" -- "0..*" android.scheduler.johnsalazar.Entity.Assessment : courseID
+android.scheduler.johnsalazar.Entity.Instructor "1" -- "1" android.scheduler.johnsalazar.Entity.Course : instructorID
+android.scheduler.johnsalazar.Entity.Term "1" -- "0..*" android.scheduler.johnsalazar.Entity.Course : termID
+
+@enduml

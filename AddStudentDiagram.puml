@@ -1,0 +1,25 @@
+@startuml
+class android.scheduler.johnsalazar.UI.AddStudent {
+~ int studentID
+~ String studentFirst
+~ String studentLast
+~ String studentPhone
+~ String studentEmail
+~ EditText addStudentFirst
+~ EditText addStudentLast
+~ EditText addStudentPhone
+~ EditText addStudentEmail
+~ FloatingActionButton floatButton
+~ Repository repository
++ void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddStudent
+@enduml

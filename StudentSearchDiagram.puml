@@ -1,0 +1,16 @@
+@startuml
+class android.scheduler.johnsalazar.UI.StudentSearch {
+- Repository repository
+- SearchAdapter searchAdapter
+- RecyclerView searchRecycler
+- SearchView studentSearchView
+- List<Student> allStudents
+# void onCreate(Bundle)
+- void filter(String)
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.StudentSearch
+@enduml

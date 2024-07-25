@@ -1,0 +1,32 @@
+@startuml
+class android.scheduler.johnsalazar.UI.StudentDetails {
+- Student currentStudent
+- TermAdapter termAdapter
+- int numTerms
+- int termID
+- int studentID
+- String studentFirst
+- String studentLast
+- String studentPhone
+- String studentEmail
+- TextView tvStudentID
+- TextView tvStudentFirst
+- TextView tvStudentLast
+- TextView tvStudentPhone
+- TextView tvStudentEmail
+- RecyclerView termRecycler
+- FloatingActionButton studentDetailsFAB
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+- void waterFallDelete()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.StudentDetails
+@enduml

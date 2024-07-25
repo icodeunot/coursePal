@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "android.scheduler.johnsalazar"
+    namespace = "android.scheduler.studyBuddy"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "android.scheduler.johnsalazar"
+        applicationId = "com.android.studyBuddy"
         minSdk = 27
         targetSdk = 34
         versionCode = 1

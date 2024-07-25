@@ -1,0 +1,17 @@
+@startuml
+class android.scheduler.johnsalazar.UI.AssessmentList {
+- Repository repository
+- RecyclerView assessmentRecycler
+- FloatingActionButton assessmentListFAB
+- AssessmentAdapter assessmentAdapter
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
+# void onResume()
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AssessmentList
+@enduml

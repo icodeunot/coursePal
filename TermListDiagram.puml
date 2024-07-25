@@ -1,0 +1,17 @@
+@startuml
+class android.scheduler.johnsalazar.UI.TermList {
+- Repository repository
+- RecyclerView termRecycler
+- FloatingActionButton termListFAB
+- TermAdapter termAdapter
+# void onCreate(Bundle)
+# void onResume()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.TermList
+@enduml

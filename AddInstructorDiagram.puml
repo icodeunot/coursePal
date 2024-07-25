@@ -1,0 +1,24 @@
+@startuml
+class android.scheduler.johnsalazar.UI.AddInstructor {
+~ int instructorID
+~ String instructorFirst
+~ String instructorLast
+~ String instructorPhone
+~ String instructorEmail
+~ EditText addInstructorFirst
+~ EditText addInstructorLast
+~ EditText addInstructorPhone
+~ EditText addInstructorEmail
+~ Repository repository
++ void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddInstructor
+@enduml

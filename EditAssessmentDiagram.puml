@@ -1,0 +1,32 @@
+@startuml
+class android.scheduler.johnsalazar.UI.EditAssessment {
+- Assessment thisAssessment
+- int courseID
+- int assessmentID
+- String assessmentTitle
+- String typeString
+- String startString
+- String endString
+- EditText titleTextView
+- Spinner typeSpinner
+- TextView startView
+- TextView endView
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar editStartCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar editEndCalendar
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ boolean updateAssessment()
+- void updateDate(TextView)
+# void onPause()
+# void onResume()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditAssessment
+@enduml

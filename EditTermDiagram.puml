@@ -1,0 +1,29 @@
+@startuml
+class android.scheduler.johnsalazar.UI.EditTerm {
+- int termID
+- int studentID
+- String termTitle
+- String termStart
+- String termEnd
+- EditText editTitle
+- TextView editStart
+- TextView editEnd
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar startCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar endCalendar
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onSaveInstanceState(Bundle)
+# void onRestoreInstanceState(Bundle)
+- void updateDate(TextView)
+- void hideKeyboard()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditTerm
+@enduml

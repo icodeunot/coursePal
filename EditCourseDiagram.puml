@@ -1,0 +1,46 @@
+@startuml
+class android.scheduler.johnsalazar.UI.EditCourse {
+- Course thisCourse
+- Instructor thisInstructor
+- Term thisTerm
+- int courseID
+- int termID
+- int instructorID
+- String courseTitle
+- String courseStart
+- String courseEnd
+- String courseStatus
+- String instructorFirst
+- String instructorLast
+- String instructorPhone
+- String instructorEmail
+- String courseNote
+- EditText editCourseTitle
+- TextView viewCourseStart
+- TextView viewCourseEnd
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar editStartCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar editEndCalendar
+- Spinner courseStatusSpinner
+- EditText editInstFirst
+- EditText editInstLast
+- EditText editInstPhone
+- EditText editInstEmail
+- EditText editCourseNote
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ boolean updateCourse()
+# void onPause()
+# void onResume()
+- void updateDate(TextView)
+- void hideKeyboard()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditCourse
+@enduml

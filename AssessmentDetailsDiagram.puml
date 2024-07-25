@@ -1,0 +1,31 @@
+@startuml
+class android.scheduler.johnsalazar.UI.AssessmentDetails {
+- Course currentCourse
+- Assessment currentAssessment
+- int courseID
+- int assessmentID
+- String courseTitle
+- String aTitle
+- String aType
+- String aStart
+- String aEnd
+- TextView courseIDView
+- TextView assessmentIDView
+- TextView courseTitleView
+- TextView titleView
+- TextView typeView
+- TextView startView
+- TextView endView
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AssessmentDetails
+@enduml

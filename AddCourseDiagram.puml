@@ -1,0 +1,40 @@
+@startuml
+class android.scheduler.johnsalazar.UI.AddCourse {
+- {static} int REQUEST_CODE_ADD_INSTRUCTOR
+~ int courseID
+~ int termID
+~ int instructorID
+~ String titleString
+~ String startString
+~ String endString
+~ String noteString
+~ Button instructorButton
+~ EditText courseTitle
+~ Spinner courseStatusSpinner
+~ String courseStatus
+~ TextView courseStart
+~ TextView courseEnd
+~ EditText courseNote
+~ CheckBox instructorAddedCheckBox
+~ FloatingActionButton addCourseFAB
+~ Repository repository
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar startCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar endCalendar
++ void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+# void onActivityResult(int,int,Intent)
+- boolean saveCourse()
+- void updateDate(TextView)
+- void hideKeyboard()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddCourse
+@enduml

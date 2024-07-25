@@ -1,0 +1,451 @@
+@startuml
+class android.scheduler.johnsalazar.UI.EditAssessment {
+- Assessment thisAssessment
+- int courseID
+- int assessmentID
+- String assessmentTitle
+- String typeString
+- String startString
+- String endString
+- EditText titleTextView
+- Spinner typeSpinner
+- TextView startView
+- TextView endView
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar editStartCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar editEndCalendar
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ boolean updateAssessment()
+- void updateDate(TextView)
+# void onPause()
+# void onResume()
+}
+
+
+class android.scheduler.johnsalazar.UI.StudentList {
+- Repository repository
+- RecyclerView studentRecycler
+- FloatingActionButton studentListFAB
+- StudentAdapter studentAdapter
+# void onCreate(Bundle)
+# void onResume()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+class android.scheduler.johnsalazar.UI.EditCourse {
+- Course thisCourse
+- Instructor thisInstructor
+- Term thisTerm
+- int courseID
+- int termID
+- int instructorID
+- String courseTitle
+- String courseStart
+- String courseEnd
+- String courseStatus
+- String instructorFirst
+- String instructorLast
+- String instructorPhone
+- String instructorEmail
+- String courseNote
+- EditText editCourseTitle
+- TextView viewCourseStart
+- TextView viewCourseEnd
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar editStartCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar editEndCalendar
+- Spinner courseStatusSpinner
+- EditText editInstFirst
+- EditText editInstLast
+- EditText editInstPhone
+- EditText editInstEmail
+- EditText editCourseNote
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ boolean updateCourse()
+# void onPause()
+# void onResume()
+- void updateDate(TextView)
+- void hideKeyboard()
+}
+
+
+class android.scheduler.johnsalazar.UI.AssessmentList {
+- Repository repository
+- RecyclerView assessmentRecycler
+- FloatingActionButton assessmentListFAB
+- AssessmentAdapter assessmentAdapter
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
+# void onResume()
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+class android.scheduler.johnsalazar.UI.AddCourse {
+- {static} int REQUEST_CODE_ADD_INSTRUCTOR
+~ int courseID
+~ int termID
+~ int instructorID
+~ String titleString
+~ String startString
+~ String endString
+~ String noteString
+~ Button instructorButton
+~ EditText courseTitle
+~ Spinner courseStatusSpinner
+~ String courseStatus
+~ TextView courseStart
+~ TextView courseEnd
+~ EditText courseNote
+~ CheckBox instructorAddedCheckBox
+~ FloatingActionButton addCourseFAB
+~ Repository repository
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar startCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar endCalendar
++ void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+# void onActivityResult(int,int,Intent)
+- boolean saveCourse()
+- void updateDate(TextView)
+- void hideKeyboard()
+}
+
+
+class android.scheduler.johnsalazar.UI.EditTerm {
+- int termID
+- int studentID
+- String termTitle
+- String termStart
+- String termEnd
+- EditText editTitle
+- TextView editStart
+- TextView editEnd
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar startCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar endCalendar
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onSaveInstanceState(Bundle)
+# void onRestoreInstanceState(Bundle)
+- void updateDate(TextView)
+- void hideKeyboard()
+}
+
+
+class android.scheduler.johnsalazar.UI.AssessmentDetails {
+- Course currentCourse
+- Assessment currentAssessment
+- int courseID
+- int assessmentID
+- String courseTitle
+- String aTitle
+- String aType
+- String aStart
+- String aEnd
+- TextView courseIDView
+- TextView assessmentIDView
+- TextView courseTitleView
+- TextView titleView
+- TextView typeView
+- TextView startView
+- TextView endView
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+}
+
+
+class android.scheduler.johnsalazar.UI.TermDetails {
+- Term currentTerm
+- CourseAdapter courseAdapter
+- int numCourses
+- int termID
+- int studentID
+- String termTitle
+- String termStart
+- String termEnd
+- TextView editTitle
+- TextView editStart
+- TextView editEnd
+- TextView editTermID
+- RecyclerView courseRecycler
+- FloatingActionButton termDetailsFAB
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+- void waterFallDelete()
+}
+
+
+class android.scheduler.johnsalazar.UI.CourseList {
+- Repository repository
+- RecyclerView courseRecycler
+- FloatingActionButton courseListFAB
+- CourseAdapter courseAdapter
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
+# void onResume()
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+class android.scheduler.johnsalazar.UI.StudentSearch {
+- Repository repository
+- SearchAdapter searchAdapter
+- RecyclerView searchRecycler
+- SearchView studentSearchView
+- List<Student> allStudents
+# void onCreate(Bundle)
+- void filter(String)
+}
+
+
+class android.scheduler.johnsalazar.UI.AddStudent {
+~ int studentID
+~ String studentFirst
+~ String studentLast
+~ String studentPhone
+~ String studentEmail
+~ EditText addStudentFirst
+~ EditText addStudentLast
+~ EditText addStudentPhone
+~ EditText addStudentEmail
+~ FloatingActionButton floatButton
+~ Repository repository
++ void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+}
+
+
+class android.scheduler.johnsalazar.UI.TermList {
+- Repository repository
+- RecyclerView termRecycler
+- FloatingActionButton termListFAB
+- TermAdapter termAdapter
+# void onCreate(Bundle)
+# void onResume()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+class android.scheduler.johnsalazar.UI.AddAssessment {
+~ int courseID
+~ int asmntID
+~ int termID
+~ int instructorID
+~ String asmntTitle
+~ String asmntStart
+~ String asmntEnd
+~ String asmntType
+~ EditText editATitle
+~ TextView editAStart
+~ TextView editAEnd
+~ Spinner asmntTypeSpinner
+~ DatePickerDialog.OnDateSetListener aStartListener
+~ Calendar aStartCalendar
+~ DatePickerDialog.OnDateSetListener aEndListener
+~ Calendar aEndCalendar
+~ Repository repository
++ void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+- void updateDate(TextView)
+- void hideKeyboard()
+- boolean assessmentSave()
+}
+
+
+class android.scheduler.johnsalazar.UI.CourseDetails {
+- Course currentCourse
+- Term courseTerm
+- Instructor courseInstructor
+- int courseID
+- int termID
+- int instructorID
+- String termTitle
+- String courseTitle
+- String courseStart
+- String courseEnd
+- String courseStatus
+- String courseNote
+- String instructorFirst
+- String instructorLast
+- String instructorPhone
+- String instructorEmail
+- TextView editTermTitle
+- TextView editTermID
+- TextView editCourseID
+- TextView editInstructorFirst
+- TextView editInstructorLast
+- TextView editInstructorPhone
+- TextView editInstructorEmail
+- TextView editTitle
+- TextView editStart
+- TextView editEnd
+- TextView editStatus
+- TextView editNote
+- RecyclerView assessmentRecycler
+- AssessmentAdapter assessmentAdapter
+- FloatingActionButton courseDetailsFAB
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+}
+
+
+class android.scheduler.johnsalazar.UI.EditStudent {
+- int studentID
+- String studentFirst
+- String studentLast
+- String studentPhone
+- String studentEmail
+- EditText etStudentFirst
+- EditText etStudentLast
+- EditText etStudentPhone
+- EditText etStudentEmail
+- Student currentStudent
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onSaveInstanceState(Bundle)
+# void onRestoreInstanceState(Bundle)
+- void hideKeyboard()
+}
+
+
+class android.scheduler.johnsalazar.UI.MainActivity {
+- String loginUN
+- String loginPW
+- EditText etUN
+- EditText etPW
++ {static} int numAlert
+- Repository repository
+# void onCreate(Bundle)
+}
+
+
+class android.scheduler.johnsalazar.UI.AddInstructor {
+~ int instructorID
+~ String instructorFirst
+~ String instructorLast
+~ String instructorPhone
+~ String instructorEmail
+~ EditText addInstructorFirst
+~ EditText addInstructorLast
+~ EditText addInstructorPhone
+~ EditText addInstructorEmail
+~ Repository repository
++ void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+}
+
+
+class android.scheduler.johnsalazar.UI.AddTerm {
+~ int termID
+~ int studentID
+~ String termTitle
+~ String termStart
+~ String termEnd
+~ EditText editTitle
+~ TextView editStart
+~ TextView editEnd
+~ Repository repository
+~ FloatingActionButton floatButton
+~ DatePickerDialog.OnDateSetListener startListener
+~ Calendar startCalendar
+~ DatePickerDialog.OnDateSetListener endListener
+~ Calendar endCalendar
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onSaveInstanceState(Bundle)
+# void onRestoreInstanceState(Bundle)
+- void updateDate(TextView)
+- void hideKeyboard()
+}
+
+
+class android.scheduler.johnsalazar.UI.StudentDetails {
+- Student currentStudent
+- TermAdapter termAdapter
+- int numTerms
+- int termID
+- int studentID
+- String studentFirst
+- String studentLast
+- String studentPhone
+- String studentEmail
+- TextView tvStudentID
+- TextView tvStudentFirst
+- TextView tvStudentLast
+- TextView tvStudentPhone
+- TextView tvStudentEmail
+- RecyclerView termRecycler
+- FloatingActionButton studentDetailsFAB
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onPause()
+# void onResume()
+- void waterFallDelete()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditAssessment
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.StudentList
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditCourse
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AssessmentList
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddCourse
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditTerm
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AssessmentDetails
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.TermDetails
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.CourseList
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.StudentSearch
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddStudent
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.TermList
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddAssessment
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.CourseDetails
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditStudent
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddInstructor
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.AddTerm
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.StudentDetails
+@enduml

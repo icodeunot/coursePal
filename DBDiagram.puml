@@ -1,0 +1,66 @@
+@startuml
+abstract class android.scheduler.johnsalazar.DB.TermDBBuilder {
++ {static} TermDBBuilder INSTANCE
++ {abstract}AssessmentDAO assessmentDAO()
++ {abstract}CourseDAO courseDAO()
++ {abstract}InstructorDAO instructorDAO()
++ {abstract}StudentDAO studentDAO()
++ {abstract}TermDAO termDAO()
+~ {static} TermDBBuilder getDatabase(Context)
+}
+
+
+class android.scheduler.johnsalazar.DB.Repository {
+- AssessmentDAO mAssessmentDAO
+- CourseDAO mCourseDAO
+- InstructorDAO mInstructorDAO
+- StudentDAO mStudentDAO
+- TermDAO mTermDAO
+- List<Assessment> mAllAssessments
+- List<Course> mAllCourses
+- List<Instructor> mAllInstructors
+- List<Student> mAllStudents
+- List<Term> mAllTerms
+- Course mCourse
+- Assessment mAssessment
+- Instructor mInstructor
+- Student mStudent
+- Term mTerm
+- {static} int NUMBER_OF_THREADS
+~ {static} ExecutorService databaseExecutor
++ List<Assessment> getmAllAssessments()
++ List<Assessment> getCourseAssessments(int)
++ void insert(Assessment)
++ void update(Assessment)
++ void delete(Assessment)
++ void deleteCourseAssessments(int)
++ Assessment getThisAssessment(int)
++ List<Course> getmAllCourses()
++ void insert(Course)
++ void update(Course)
++ void delete(Course)
++ void deleteTermCourses(int)
++ Course getThisCourse(int)
++ List<Instructor> getmAllInstructors()
++ void insert(Instructor)
++ void update(Instructor)
++ void delete(Instructor)
++ Instructor getThisInstructor(int)
++ List<Student> getmAllStudents()
++ void insert(Student)
++ void update(Student)
++ void delete(Student)
++ Student getThisStudent(int)
++ List<Term> getmAllTerms()
++ void insert(Term)
++ void update(Term)
++ void delete(Term)
++ void deleteStudentTerms(int)
++ Term getThisTerm(int)
+}
+
+
+
+
+androidx.room.RoomDatabase <|-- android.scheduler.johnsalazar.DB.TermDBBuilder
+@enduml

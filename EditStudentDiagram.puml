@@ -1,0 +1,26 @@
+@startuml
+class android.scheduler.johnsalazar.UI.EditStudent {
+- int studentID
+- String studentFirst
+- String studentLast
+- String studentPhone
+- String studentEmail
+- EditText etStudentFirst
+- EditText etStudentLast
+- EditText etStudentPhone
+- EditText etStudentEmail
+- Student currentStudent
+- Repository repository
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+# void onSaveInstanceState(Bundle)
+# void onRestoreInstanceState(Bundle)
+- void hideKeyboard()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- android.scheduler.johnsalazar.UI.EditStudent
+@enduml
